@@ -19,7 +19,7 @@ fetch(url)
         document.getElementById('temperatura').innerText = dados.main.temp + "°C";
         document.getElementById('tempMin').innerText = "Min: " + dados.main.temp_min + "°C";
         document.getElementById('tempMax').innerText = "Max: " + dados.main.temp_max + "°C";
-        document.getElementById('tempSensacao').innerText = "Sensação Termica: " + dados.main.humidity;
+        document.getElementById('tempSensacao').innerText = "Sensação Termica: " + dados.main.feels_like + "°C";
         document.getElementById('tempUmidade').innerText = "Umidade: " + dados.main.humidity;
         document.getElementById('tempDescricao').innerText = "Descrição: " + dados.weather[0].description;
         icone = dados.weather[0].icon;
