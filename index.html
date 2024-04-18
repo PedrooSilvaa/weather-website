@@ -11,7 +11,7 @@
     <main>
         <section class="local-temp">
             
-            <select id="local">
+            <select id="local" onchange="leitorEstado()">
                 <option value="Acre">Acre</option>
                 <option value="Alagoas">Alagoas</option>
                 <option value="Amapá">Amapá</option>
@@ -40,13 +40,25 @@
                 <option value="Sergipe">Sergipe</option>
                 <option value="Tocantins">Tocantins</option>
             </select>
+
+            <select id="localDistrito">
+                <option value="">Selecione um estado</option>
+            </select>
+            
             <button onclick="verTemp()">Pesquise</button>
+            
             <h1 id="temperatura">00.00°C</h1>
+            
             <img id="icone" alt="">
+            
             <p id="tempMin">Min: 00.00°C</p>
+            
             <p id="tempMax">Max: 00.00°C</p>
+            
             <p id="tempSensacao">Sensação Termica: 00.00°C</p>
+            
             <p id="tempUmidade">Umidade: 00.00°C</p>
+            
             <p id="tempDescricao">Descrição: </p>
             
             

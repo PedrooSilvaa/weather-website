@@ -1,19 +1,131 @@
+
+
 let chave = "777fd6c175f16899b669ab9b22be7638";
+let local;
+let select = document.getElementById("localDistrito");
+let temp = "";
+let selectLocal;
+let uf;
 
+function leitorEstado(){
+    selectLocal = document.getElementById('local');
+    local = selectLocal.value;
+    console.log(local)
+    let url = "";
+
+    switch (local) {
+        case "Acre": uf = 'AC'
+        break;
+        case "Alagoas":
+            uf = 'AL';
+            break;
+        case "Amapá":
+            uf = 'AP';
+            break;
+        case "Amazonas":
+            uf = 'AM';
+            break;
+        case "Bahia":
+            uf = 'BA';
+            break;
+        case "Ceará":
+            uf = 'CE';
+            break;
+        case "Distrito Federal":
+            uf = 'DF';
+            break;
+        case "Espírito Santo":
+            uf = 'ES';
+            break;
+        case "Goiás":
+            uf = 'GO';
+            break;
+        case "Maranhão":
+            uf = 'MA';
+            break;
+        case "Mato Grosso":
+            uf = 'MT';
+            break;
+        case "Mato Grosso do Sul":
+            uf = 'MS';
+            break;
+        case "Minas Gerais":
+            uf = 'MG';
+            break;
+        case "Pará":
+            uf = 'PA';
+            break;
+        case "Paraíba":
+            uf = 'PB';
+            break;
+        case "Paraná":
+            uf = 'PR';
+            break;
+        case "Pernambuco":
+            uf = 'PE';
+            break;
+        case "Piauí":
+            uf = 'PI';
+            break;
+        case "Rio de Janeiro":
+            uf = 'RJ';
+            break;
+        case "Rio Grande do Norte":
+            uf = 'RN';
+            break;
+        case "Rio Grande do Sul":
+            uf = 'RS';
+            break;
+        case "Rondônia":
+            uf = 'RO';
+            break;
+        case "Roraima":
+            uf = 'RR';
+            break;
+        case "Santa Catarina":
+            uf = 'SC';
+            break;
+        case "São Paulo":
+            uf = 'SP';
+            break;
+        case "Sergipe":
+            uf = 'SE';
+            break;
+        case "Tocantins":
+            uf = 'TO';
+            break;
+        default:
+            // Caso o nome do estado não seja encontrado
+            console.error("Estado não encontrado:", local);
+            break;
+    }
+
+    url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/distritos`
+
+    fetch(url)
+    .then(resposta => {
+        return resposta.json();
+    })
+    .then(dados =>{
+        console.log(dados);
+        for(i = 0; i < dados.length; i++){
+            temp += `<option value="${dados[i].nome}">${dados[i].nome}</option>`
+        }
+        select.innerHTML = temp;
+        temp = "";
+    })
+
+}
 function verTemp(){
-    
-    var selectLocal = document.getElementById('local');
-
-    var local = selectLocal.options[selectLocal.selectedIndex].value;
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&lang=pt_br&appid=${chave}&units=metric`
+    selectLocalDistrito = document.getElementById('localDistrito');
+    localDistrito = selectLocalDistrito.value;
+    console.log(localDistrito)
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${localDistrito}&lang=pt_br&appid=${chave}&units=metric`
 
 fetch(url)
     .then(resposta =>{
-    // console.log(resposta);
+    // console.log(resposta); 
     return resposta.json();
-
-    // document.getElementById('testeTexto').innerText = json.resposta;
     })
     .then(dados =>{
         console.log(dados)
