@@ -2,8 +2,9 @@ let chave = "777fd6c175f16899b669ab9b22be7638";
 
 function verTemp(){
     
-    var selectCorpo = document.getElementById('local');
-    var local = selectCorpo.options[selectCorpo.selectedIndex].value;
+    var selectLocal = document.getElementById('local');
+
+    var local = selectLocal.options[selectLocal.selectedIndex].value;
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&lang=pt_br&appid=${chave}&units=metric`
 
