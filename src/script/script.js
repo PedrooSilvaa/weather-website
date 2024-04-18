@@ -129,7 +129,7 @@ fetch(url)
     })
     .then(dados =>{
         console.log(dados)
-        document.getElementById('temperatura').innerText = dados.main.temp + "°C";
+        document.getElementById('temperatura').innerText = Math.round(dados.main.temp) + "°";
         document.getElementById('tempMin').innerText = "Min: " + dados.main.temp_min + "°C";
         document.getElementById('tempMax').innerText = "Max: " + dados.main.temp_max + "°C";
         document.getElementById('tempSensacao').innerText = "Sensação Termica: " + dados.main.feels_like + "°C";

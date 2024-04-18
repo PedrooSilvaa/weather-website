@@ -10,8 +10,9 @@
     
     <main>
         <section class="local-temp">
-            
-            <select id="local" onchange="leitorEstado()">
+            <div class="container">
+
+                <select id="local" onchange="leitorEstado()">
                 <option value="Acre">Acre</option>
                 <option value="Alagoas">Alagoas</option>
                 <option value="Amapá">Amapá</option>
@@ -47,20 +48,23 @@
             
             <button onclick="verTemp()">Pesquise</button>
             
-            <h1 id="temperatura">00.00°C</h1>
+            <h1 id="temperatura">0°</h1>
             
-            <img id="icone" alt="">
+            <img id="icone" src="https://openweathermap.org/img/wn/01d@2x.png" alt="">
             
-            <p id="tempMin">Min: 00.00°C</p>
+            <div id="informacoes">
+                <p id="tempMin">Min: 00.00°C</p>
+                
+                <p id="tempMax">Max: 00.00°C</p>
+                
+                <p id="tempSensacao">Sensação Termica: 00.00°C</p>
+                
+                <p id="tempUmidade">Umidade: 00.00°C</p>
+                
+                <p id="tempDescricao">Descrição: </p>
+            </div>
             
-            <p id="tempMax">Max: 00.00°C</p>
-            
-            <p id="tempSensacao">Sensação Termica: 00.00°C</p>
-            
-            <p id="tempUmidade">Umidade: 00.00°C</p>
-            
-            <p id="tempDescricao">Descrição: </p>
-            
+            </div>
             
         </section>
     </main>

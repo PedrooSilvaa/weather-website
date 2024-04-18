@@ -4,7 +4,8 @@
 
 }
 
-.local-temp {
+.local-temp{
+    background-color: aqua;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -12,23 +13,56 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    h1 {
-        font-size: 100px;
-        margin: 20px;
-    }
-
-    select#local {
-        height: 50px;
-        width: 400px;
+}
+    .container {
+        background-color: bisque;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 35%;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-    }
 
-    button {
-        background-color: black;
-        color: white;
-        width: 400px;
-        cursor: pointer;
-        height: 50px;
-    }
+        #local{
+            position: absolute;
+            top: 0%;
+            height: 25px;
+            width: 400px;
+            text-align: center;
+        }
+        #localDistrito {
+            position: absolute;
+            top: 4%;
+            height: 25px;
+            width: 400px;
+            text-align: center;
+        }
+        button {
+            background-color: black;
+            color: white;
+            width: 400px;
+            cursor: pointer;
+            height: 50px;
+            position: absolute;
+            top: 58px;
+        }
+
+        h1 {
+            font-size: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #icone {
+            position: absolute;
+            top: 60%;
+        }
+
+        #informacoes {
+            position: absolute;
+            top: 85%;
+        }
 }
